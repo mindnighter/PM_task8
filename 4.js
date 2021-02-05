@@ -1,6 +1,15 @@
 const assert = require('assert');
 
-const extendWithEndless = (...rest) => rest.reduce((accumulator, currentObject)=>Object.assign(accumulator, currentObject));
+const extendWithEndless = (...rest) => {
+    let secondary = {};
+    for (let main of rest) {
+        secondary = {
+            ...secondary,
+            ...main
+        };
+    }
+    return secondary;
+}
 
 assert.deepStrictEqual(extendWithEndless(
 

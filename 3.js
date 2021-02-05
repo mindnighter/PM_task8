@@ -1,6 +1,8 @@
 const assert = require('assert');
 
-const extendWith = (main,secondary) => Object.assign(secondary, main);
+const extendWith = (main,secondary) => { 
+    return {...secondary,...main};
+};
 
 assert.deepStrictEqual(extendWith(
 
